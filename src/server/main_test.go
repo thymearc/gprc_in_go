@@ -33,6 +33,6 @@ func TestService(t *testing.T) {
 	log.Printf("calc result: %s", r.Result)
 	os.Stdout.WriteString("Result")
 	os.Stderr.WriteString(r.Result)
-	if r.Result != "4" { 
+	if r.Result != "result: 4" {
 		t.Error() }
 }

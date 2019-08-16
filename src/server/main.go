@@ -2,11 +2,13 @@
 
 package main
 
+
 import (
 	"context"
 	"log"
+	"fmt"
+	"strconv"
 	"net"
-
 	"google.golang.org/grpc"
 	pb "./CalcService"
 )
@@ -18,8 +20,15 @@ const (
 type server struct{}
 
 func (s *server) CalcAdd(ctx context.Context, in *pb.Request) (*pb.Reply, error) {
-	log.Printf("Received: %v", in.A)
-	return &pb.Reply{"result: " + ( in.A + in.B )}, nil
+	a, err := strconv.Atoi(in.A)
+	if err != nil {
+		log.Fatalf("failed to convert: %v", err)
+	}
+	b, err := strconv.Atoi(in.B)
+	if err != nil {
+		log.Fatalf("failed to convert: %v", err)
+	}
+	return &pb.Reply{fmt.Sprintf("result: %d", ( a + b ))}, nil
 }
 
 func main() {
