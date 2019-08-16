@@ -31,6 +31,17 @@ func (s *server) CalcAdd(ctx context.Context, in *pb.Request) (*pb.Reply, error)
 	return &pb.Reply{fmt.Sprintf("result: %d", ( a + b ))}, nil
 }
 
+func (s *server) CalcMultiply(ctx context.Context, in *pb.Request) (*pb.Reply, error) {
+	a, err := strconv.Atoi(in.A)
+	if err != nil {
+		log.Fatalf("failed to convert: %v", err)
+	}
+	b, err := strconv.Atoi(in.B)
+	if err != nil {
+		log.Fatalf("failed to convert: %v", err)
+	}
+	return &pb.Reply{fmt.Sprintf("result: %d", ( a * b ))}, nil
+}
 func main() {
 	lis, err := net.Listen("tcp", port)
 	if err != nil {

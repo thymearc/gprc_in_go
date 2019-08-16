@@ -2,7 +2,6 @@ package tests
 import (
 	"context"
 	"log"
-	"os"
 	"time"
 	"testing"
 	"google.golang.org/grpc"
@@ -30,9 +29,15 @@ func TestService(t *testing.T) {
 		log.Fatalf("something went wrong: %v", err)
 		t.Error()
 	}
-	log.Printf("calc result: %s", r.Result)
-	os.Stdout.WriteString("Result")
-	os.Stderr.WriteString(r.Result)
 	if r.Result != "result: 4" {
+		t.Error() }
+	a = "5"
+	b = "2"
+	r, err = c.CalcMultiply(ctx, &pb.Request{A: a, B: b})
+	if err != nil {
+		log.Fatalf("something went wrong: %v", err)
+		t.Error()
+	}
+	if r.Result != "result: 10" {
 		t.Error() }
 }

@@ -8,6 +8,7 @@ package CalcService;
 
 service Calculator {
   rpc CalcAdd (Request) returns (Reply) {}
+  rpc CalcMultiply (Request) returns (Reply) {}
 }
 
 message Request {
