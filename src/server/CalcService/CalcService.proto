@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.CalcService.Calc";
+option java_outer_classname = "CalcServiceProto";
+
+package CalcService;
+
+service Calculator {
+  rpc CalcAdd (Request) returns (Reply) {}
+}
+
+message Request {
+string A = 1;
+string B = 2;
+}
+
+message Reply {
+string result = 3;
+}
+
+
