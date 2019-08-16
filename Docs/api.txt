@@ -1,0 +1,13 @@
+servise consists of three api calls,  CalcADD, CalcMultiply and CalcTestEqual
+
+1. CalcAdd ( string A, string B )
+
+this method takes two numeric strings and returns result of summing them.
+
+2. CalcMultiply ( string A, String B)
+
+this method takes two numeric strings and returns result of multiplication of this two.
+
+3. CalcTestEqual ( string A, String B)
+
+this method takes two numeric strings and compares if their mathematical value is equal.

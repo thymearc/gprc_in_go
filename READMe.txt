@@ -22,6 +22,14 @@
 			sh env.sh	
 			sh dependencies.sh
 
-	3. Docker
+	3. how to use it?
+		enter server folder	
+	        you may have to regenerate service with this command:	
+		protoc -I CalcService CalcService/CalcService.proto --go_out=plugins=grpc:CalcService
 	
-	
+	        test it:
+		go test main_test.go
+
+	4. Documentation
+
+		grpc api is described in Doc/api.txt
