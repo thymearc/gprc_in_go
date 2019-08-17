@@ -19,7 +19,7 @@
 	
 		do:
 
-			sh env.sh	
+			source env.sh	
 			sh dependencies.sh
 
 	3. how to use it?

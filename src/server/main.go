@@ -14,7 +14,8 @@ import (
 )
 
 const (
-	port = ":50051"
+	port = os.Getenv("APP_PORT")
+	address = os.Getenv("APP_ADDR")
 )
 
 type server struct{}

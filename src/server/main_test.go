@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	address     = "localhost:50051"
+	address     = os.Getenv("APP_ADDR") + ":" + os.Getenv("APP_PORT")
 	defaultName = "calc"
 )
 
